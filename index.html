@@ -26,18 +26,41 @@
           <input type="submit" value="Search" class="city-search" />
         </form>
       </header>
-      <main>
+      <main class="current-container">
         <h1>paris</h1>
-        <p>
-          Monday 8:00, overcast clouds
-          <br />
-          Humidity: 91%, Wind: 7.72Km/h
-        </p>
-        <div>⛅14°C</div>
+        <div class="current-weather-container">
+          <p>
+            Monday 8:00, overcast clouds
+            <br />
+            Humidity: <strong> 91%</strong>, Wind: <strong> 7.72Km/h</strong>
+          </p>
+          <div class="current-weather-temperature">
+            <div class="current-temperature-icon" id="current-temperature-icon">
+              ⛅
+            </div>
+            <div class="current-temperature-value" id="temperature-value">
+              14
+            </div>
+            <div class="current-temperature-unit" id="temperature-unit">°C</div>
+          </div>
+        </div>
       </main>
       <footer>
-        This project was coded by Dr Ogunnubi Zainab, is open-sourced on GitHub
-        and hosted on Netlify
+        This project was coded by
+        <a href="https://github.com/Dr-ogunnubi" target=" _blank"
+          >Zainab Ogunnubi</a
+        >, is
+        <a
+          href="https://github.com/Dr-ogunnubi/my-forecast-project"
+          target=" _blank"
+          >open-sourced on GitHub</a
+        >
+        and
+        <a
+          href="https://my-first-complete-project.netlify.app/"
+          target=" _blank"
+          >hosted on Netlify</a
+        >
       </footer>
     </div>
   </body>
