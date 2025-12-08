@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(255, 245, 246);
+  margin-top: 50px;
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  max-width: 600px;
+  padding: 20px;
+  background-color: white;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+}
+h1 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 48px;
+}
+.form-container {
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 30px;
+}
+.city-input {
+  width: 75%;
+  padding: 15px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(255, 245, 246);
+}
+.city-search {
+  padding: 15px 20px;
+  border-radius: 6px;
+  color: white;
+  background-color: rgb(227, 129, 162);
+  border: none;
+}
