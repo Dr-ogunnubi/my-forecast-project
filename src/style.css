@@ -66,8 +66,9 @@ a {
   display: flex;
 }
 .current-temperature-icon {
-  font-size: 44px;
-  margin-top: -10px;
+  width: 88px;
+  height: 88px;
+  margin-top: -35px;
 }
 .current-temperature-value {
   margin-top: -30px;

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -15,29 +17,38 @@
   <body>
     <div class="container">
       <header>
-        <form class="form-container">
+        <form class="form-container" id="form-container">
           <input
             type="text"
             placeholder="Enter a city..."
             required
             autofocus
             class="city-input"
+            id="city-input"
           />
-          <input type="submit" value="Search" class="city-search" />
+          <input
+            type="submit"
+            value="Search"
+            class="city-search"
+            id="city-search"
+          />
         </form>
       </header>
       <main class="current-container">
-        <h1>paris</h1>
+        <h1 id="weather-city"></h1>
         <div class="current-weather-container">
           <p>
-            Monday 8:00, overcast clouds
+            <span id="current-date"></span>,
+            <span id="current-description"></span>
             <br />
-            Humidity: <strong> 91%</strong>, Wind: <strong> 7.72Km/h</strong>
+            Humidity: <strong id="current-humidity"> </strong>, Wind:
+            <strong id="current-windspeed"> </strong>
           </p>
-          <div class="current-weather-temperature">
-            <div class="current-temperature-icon" id="current-temperature-icon">
-              ⛅
-            </div>
+          <div
+            class="current-weather-temperature"
+            id="current-weather-temperature"
+          >
+            <div id="current-temperature-icon"></div>
             <div class="current-temperature-value" id="temperature-value">
               14
             </div>
@@ -56,12 +67,11 @@
           >open-sourced on GitHub</a
         >
         and
-        <a
-          href="https://my-first-complete-project.netlify.app/"
-          target=" _blank"
+        <a href="https://my-first-forecast.netlify.app/" target=" _blank"
           >hosted on Netlify</a
         >
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
