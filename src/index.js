@@ -10,6 +10,7 @@ function showWeather(response) {
   let currentIconElement = document.querySelector("#current-temperature-icon");
   let CurrentDateElement = document.querySelector("#current-date");
 
+  let date = new Date(response.data.time * 1000);
   let currentTemperature = Math.round(response.data.temperature.current);
   let city = response.data.city;
   currentHumidity = `${response.data.temperature.humidity}%`;
@@ -25,6 +26,9 @@ function showWeather(response) {
   h1.innerHTML = city;
   temperatureValueElement.innerHTML = currentTemperature;
   console.log(response);
+
+  getWeather(response.data.city);
+  console.log(response.data.city);
 }
 
 function formatDate(date) {
@@ -55,8 +59,6 @@ function formatDate(date) {
   return `${day} ${time}`;
 }
 
-let date = new Date();
-
 function searchCity(city) {
   let apiKey = "ff69318boa02a4e62f1a9e845ad0e1t9";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
@@ -80,7 +82,17 @@ formContainer.addEventListener("submit", showCity);
 
 searchCity("Sydney");
 
-function displayForecast() {
+function getWeather(city) {
+  let apiKey = "ff69318boa02a4e62f1a9e845ad0e1t9";
+  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  console.log(apiUrlForecast);
+
+  axios.get(apiUrlForecast).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let forecastHtml = "";
@@ -101,4 +113,3 @@ function displayForecast() {
   let forecastContainerElement = document.querySelector("#forecast-container");
   forecastContainerElement.innerHTML = forecastHtml;
 }
-displayForecast();
