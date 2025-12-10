@@ -95,14 +95,16 @@ a {
   margin-bottom: 20px;
 }
 .forecast-icon {
-  font-size: 38px;
+  width: 88px;
+  height: 88px;
 }
 .forecast-temperatures {
   margin-top: 20px;
   display: flex;
   color: #f65282;
   justify-content: center;
+  margin-left: 10px;
 }
 .forecast-temperature {
-  padding-right: 20px;
+  padding-right: 30px;
 }

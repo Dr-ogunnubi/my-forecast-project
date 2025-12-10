@@ -90,24 +90,37 @@ function getWeather(city) {
   axios.get(apiUrlForecast).then(displayForecast);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
 function displayForecast(response) {
   console.log(response.data);
 
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `<div class="forecast-date">
-            <div class="forecast-day">${day}</div>
-            <div class="forecast-icon">⛅</div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="forecast-date">
+            <div class="forecast-day">${formatDay(day.time)}</div>
+          
+            <img src = "${day.condition.icon_url}"
+                class="forecast-icon" />
             <div class="forecast-temperatures">
-              <div class="forecast-temperature"><strong>19°</strong></div>
-              <div class="forecast-temperature">23°</div>
+              <div class="forecast-temperature"><strong>${Math.round(
+                day.temperature.maximum
+              )}°</strong></div>
+              <div class="forecast-temperature">${Math.round(
+                day.temperature.minimum
+              )}°</div>
+               
             </div>
             </div>`;
+    }
   });
 
   let forecastContainerElement = document.querySelector("#forecast-container");
