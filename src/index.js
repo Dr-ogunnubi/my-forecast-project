@@ -83,14 +83,13 @@ searchCity("Sydney");
 function displayForecast() {
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  let forecastContainerElement = document.querySelector("#forecast-container");
   let forecastHtml = "";
 
   days.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `<div class="forecast-date">
-            <div class="forecast-day">Tue</div>
+            <div class="forecast-day">${day}</div>
             <div class="forecast-icon">⛅</div>
             <div class="forecast-temperatures">
               <div class="forecast-temperature"><strong>19°</strong></div>
@@ -99,6 +98,7 @@ function displayForecast() {
             </div>`;
   });
 
+  let forecastContainerElement = document.querySelector("#forecast-container");
   forecastContainerElement.innerHTML = forecastHtml;
 }
 displayForecast();
